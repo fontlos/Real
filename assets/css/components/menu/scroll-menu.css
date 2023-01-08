@@ -1,0 +1,65 @@
+.scroll-menu {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    background-image: url("https://www.transparenttextures.com/patterns/cubes.png"), linear-gradient(to right top, #cf4af3, #e73bd7, #f631bc, #fd31a2, #ff3a8b, #ff4b78, #ff5e68, #ff705c, #ff8c51, #ffaa49, #ffc848, #ffe652);
+    border-radius: 14px;
+    padding: 20px 40px;
+}
+
+@media screen and (max-width: 415px) {
+    .scroll-menu {
+        padding: 20px;
+    }
+}
+
+.scroll-menu .img-content {
+    font-weight: 500;
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+.scroll-menu .img-content img {
+    width: 28px;
+    height: 28px;
+}
+
+.scroll-menu .description {
+    font-weight: 400;
+    font-size: 14px;
+    margin-top: 16px;
+    line-height: 1.7em;
+    color: #ebecec;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.scroll-menu .context {
+    max-width: 350px;
+}
+
+.scroll-menu .scroll-menu-button {
+    margin-top: 16px;
+}
+
+.scroll-menu .logo {
+    width: 186px;
+    -o-object-fit: cover;
+    object-fit: cover;
+    margin-top: -25px;
+    -o-object-position: center;
+    object-position: center;
+}
+
+@media screen and (max-width: 570px) {
+    .scroll-menu .logo {
+        width: 110px;
+    }
+}

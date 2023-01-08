@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+body {
+    font-family: var(--body-font);
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    font-size: 15px;
+    font-weight: 500;
+}
+
+/* body.light:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.72) 0%, rgba(255, 255, 255, 0.45) 100%);
+    -webkit-backdrop-filter: saturate(3);
+    backdrop-filter: saturate(3);
+} */
+
+.app {
+    width: 100%;
+    height: 100vh;
+    border-radius: 10px;
+    background-color: var(--theme-bg-color);
+    display: grid;
+    grid-template-areas:
+        "header header header"
+        "nav main main"
+        "footer footer footer";
+    grid-template-columns: 240px 1fr;
+    grid-template-rows: 60px 4fr 100px;
+}
+
+@media screen and (max-width: 945px) {
+    .app {
+        grid-template-areas:
+            "header header"
+            "main main"
+            "footer footer";
+        grid-template-columns: 1fr;
+    }
+}
+
+header {
+    grid-area: header;
+}
+
+nav {
+    grid-area: nav;
+}
+
+main {
+    grid-area: main;
+    /* 防止 main 撑大 grid 容器 */
+    overflow: hidden;
+    display: grid;
+}
+
+aside {
+    grid-area: aside;
+}
+
+footer {
+    grid-area: footer;
+}

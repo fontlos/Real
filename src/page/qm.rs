@@ -3,7 +3,7 @@ use dioxus::prelude::*;
 use crate::components::{Card, CardItem};
 
 pub fn qm(cx: Scope) -> Element {
-    rsx!(cx,
+    render!(
         link{
             rel:"stylesheet",
             href:"assets/css/components/content/content.css"

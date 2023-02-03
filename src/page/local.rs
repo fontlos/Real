@@ -1,4 +1,5 @@
 use dioxus::prelude::*;
+use router::use_route;
 
 // use crate::components::list::{List, LocalListItem};
 // use crate::config::data::LocalList;
@@ -46,7 +47,7 @@ pub fn local(cx: Scope) -> Element {
     // }
     // });
 
-    rsx!(cx,
+    render!(
         link{
             rel:"stylesheet",
             href:"assets/css/components/content/content.css"

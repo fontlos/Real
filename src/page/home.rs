@@ -3,7 +3,7 @@ use dioxus::prelude::*;
 use crate::components::{Card, CardItem, List, IndexMenu, ScrollMenu};
 
 pub fn home(cx: Scope) -> Element {
-    rsx!(cx,
+    render!(
         link{
             rel:"stylesheet",
             href:"assets/css/components/content/content.css"

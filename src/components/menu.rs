@@ -1,7 +1,7 @@
 use dioxus::prelude::*;
 
 pub fn IndexMenu(cx: Scope) -> Element {
-    rsx!(cx,
+    render!(
         link{
             rel:"stylesheet",
             href:"assets/css/components/menu/index-menu.css"
@@ -36,7 +36,7 @@ pub fn IndexMenu(cx: Scope) -> Element {
 }
 
 pub fn ScrollMenu(cx: Scope) -> Element {
-    rsx!(cx,
+    render!(
         link{
             rel:"stylesheet",
             href:"assets/css/components/menu/scroll-menu.css"

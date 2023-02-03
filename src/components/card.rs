@@ -8,7 +8,7 @@ pub struct CardProps<'a> {
 
 #[allow(non_snake_case)]
 pub fn Card<'a>(cx: Scope<'a, CardProps<'a>>) -> Element {
-    rsx!(cx,
+    render!(
         link{
             rel:"stylesheet",
             href:"assets/css/components/content/content-card.css"
@@ -35,7 +35,7 @@ pub struct CardItemProps {
 
 #[allow(non_snake_case)]
 pub fn CardItem(cx: Scope<CardItemProps>) -> Element {
-    rsx!(cx,
+    render!(
         div { class: "card-item",
             span {
                 img {

@@ -24,7 +24,7 @@ pub fn cube(cx: Scope) -> Element {
             }
         )
     });
-    rsx!(cx,
+    render!(
         link{
             rel:"stylesheet",
             href:"assets/css/components/cube.css"

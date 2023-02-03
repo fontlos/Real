@@ -1,7 +1,7 @@
 use dioxus::prelude::*;
 
 pub fn footer(cx: Scope) -> Element {
-    rsx!(cx,
+    render!(
         link{
             rel:"stylesheet",
             href:"assets/css/components/footer.css"

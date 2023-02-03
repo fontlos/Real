@@ -1,4 +1,5 @@
 use dioxus::prelude::*;
+use router::Link;
 
 // use crate::CONFIG;
 
@@ -23,7 +24,7 @@ pub fn nav(cx: Scope) -> Element {
     //     })
     // });
 
-    rsx!(cx,
+    render!(
         link{
             rel:"stylesheet",
             href:"assets/css/components/nav.css"
@@ -81,7 +82,7 @@ struct NavItemProps<'a> {
 
 #[allow(non_snake_case)]
 fn NavItem<'a>(cx: Scope<'a, NavItemProps<'a>>) -> Element {
-    rsx!(cx,
+    render!(
         Link {
             to: "{cx.props.link}",
             svg {
@@ -117,7 +118,7 @@ struct NavPlayListItemProps {
 
 #[allow(non_snake_case)]
 fn NavPlayListItem(cx: Scope<NavPlayListItemProps>) -> Element {
-    rsx!(cx,
+    render!(
         Link {
             to: "{cx.props.link}",
             svg {
@@ -153,7 +154,7 @@ struct NavLocalItemProps {
 
 #[allow(non_snake_case)]
 fn NavLocalItem(cx: Scope<NavLocalItemProps>) -> Element {
-    rsx!(cx,
+    render!(
         Link {
             to: "{cx.props.link}",
             svg {

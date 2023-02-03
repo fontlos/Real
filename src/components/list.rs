@@ -7,7 +7,7 @@ pub struct ListProps<'a> {
 }
 
 pub fn List<'a>(cx: Scope<'a, ListProps<'a>>) -> Element {
-    rsx!(cx,
+    render!(
         link{
             rel:"stylesheet",
             href:"assets/css/components/content/content-list.css"
@@ -36,7 +36,7 @@ pub struct SearchListItemProps {
 }
 
 pub fn SearchListItem(cx: Scope<SearchListItemProps>) -> Element {
-    rsx!(cx,
+    render!(
         li {
             class: "list-item",
             div {
@@ -97,7 +97,7 @@ pub struct PlayListItemProps {
 }
 
 pub fn PlayListItem(cx: Scope<PlayListItemProps>) -> Element {
-    rsx!(cx,
+    render!(
         li {
             class: "list-item",
             div {
@@ -159,7 +159,7 @@ pub struct LocalListItemProps {
 }
 
 pub fn LocalListItem(cx: Scope<LocalListItemProps>) -> Element {
-    rsx!(cx,
+    render!(
         li {
             class: "list-item",
             div {

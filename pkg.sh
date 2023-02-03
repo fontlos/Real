@@ -3,4 +3,4 @@ mkdir "./pkg"
 mkdir "./pkg/Real"
 cp -r "./assets" "./pkg/Real/assets"
 cargo build --release
-cp "./target/release/real" "./pkg/Real"
+cp "./target/release/Real" "./pkg/Real"

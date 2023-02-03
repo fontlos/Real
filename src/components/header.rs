@@ -1,17 +1,18 @@
 use dioxus::prelude::*;
+use fermi::{use_read,use_set};
 
 use crate::APP;
 
 // 颜色主题图标
 const THEME: &str = "M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z";
 
-#[cfg(not(target_arch = "wasm32"))]
+// #[cfg(not(target_arch = "wasm32"))]
 pub fn header(cx: Scope) -> Element {
     let app_mode = use_read(&cx, APP);
     let app_mode_set = use_set(&cx, APP);
     let is_wide = use_state(&cx,||"");
 
-    rsx!(cx,
+    render!(
         link{
             rel:"stylesheet",
             href:"assets/css/components/header.css"
@@ -47,7 +48,7 @@ pub fn header(cx: Scope) -> Element {
                     }
                 }
             }
-            windows_drag()
+            windows_drag(cx)
             div { class: "header-menu",
                 a {
                     class: "menu-button active  notify",
@@ -83,17 +84,17 @@ pub fn header(cx: Scope) -> Element {
                     },
                 }
             }
-            windows_drag()
-            control_button()
+            windows_drag(cx)
+            control_button(cx)
         }
     )
 }
 
 #[cfg(not(target_arch = "wasm32"))]
 fn control_button(cx: Scope) -> Element {
-    let window = dioxus::desktop::use_window(&cx);
+    let window = desktop::use_window(&cx);
     let is_max = use_state(&cx, || false);
-    rsx!(cx,
+    render!(
         div {
             class: "control-buttons",
             div{
@@ -124,7 +125,7 @@ fn control_button(cx: Scope) -> Element {
 
 #[cfg(target_arch = "wasm32")]
 fn control_button(cx: Scope) -> Element {
-    rsx!(cx,
+    render!(
         div {
             class: "control-buttons",
             div{
@@ -145,8 +146,8 @@ fn control_button(cx: Scope) -> Element {
 
 #[cfg(not(target_arch = "wasm32"))]
 fn windows_drag(cx: Scope) -> Element {
-    let window = dioxus::desktop::use_window(&cx);
-    rsx!(cx,
+    let window = desktop::use_window(&cx);
+    render!(
         div{
             class:"windows-drag",
             onmousedown:move|_|{
@@ -158,7 +159,7 @@ fn windows_drag(cx: Scope) -> Element {
 
 #[cfg(target_arch = "wasm32")]
 fn windows_drag(cx: Scope) -> Element {
-    rsx!(cx,
+    render!(
         div{
             class:"windows-drag",
         }

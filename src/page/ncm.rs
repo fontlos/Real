@@ -51,11 +51,11 @@ pub fn ncm(cx: Scope) -> Element {
             //         span{i{}}
             //     }
             // }
-            cube::cube()
+            cube::cube(cx)
         ),
     };
 
-    rsx!(cx,
+    render!(
         link{
             rel:"stylesheet",
             href:"assets/css/components/content/content.css"

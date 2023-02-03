@@ -1,5 +1,7 @@
 use dioxus::prelude::*;
-#[cfg(target_arch = "wasm32")]
+use fermi::{use_read, use_init_atom_root};
+use router::{Router, Route};
+
 use anyhow::Result;
 
 use crate::components;
@@ -7,16 +9,17 @@ use crate::page;
 
 #[cfg(target_arch = "wasm32")]
 pub fn start() -> Result<()> {
-    dioxus::web::launch(app);
+    web::launch(app);
     Ok(())
 }
 
 use crate::APP;
 
 fn app(cx: Scope) -> Element {
+    use_init_atom_root(cx);
     let app_mode = use_read(&cx, APP);
 
-    rsx! (cx,
+    render!(
         div{
             class: "app {app_mode}",
             Router{

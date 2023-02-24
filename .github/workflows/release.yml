@@ -64,16 +64,16 @@ jobs:
 
     - name: Strip binary (linux and macos)
       if: matrix.build == 'linux' || matrix.build == 'macos'
-      run: strip "target/${{ matrix.target }}/release/real"
+      run: strip "target/${{ matrix.target }}/release/Real"
 
     - name: Cope binary (linux and macos)
       if: matrix.build == 'linux' || matrix.build == 'macos'
-      run: cp "target/${{ matrix.target }}/release/real" "./"
+      run: cp "target/${{ matrix.target }}/release/Real" "./"
 
     - name: Cope binary (windows)
       if: matrix.build == 'windows'
       shell: powershell
-      run: cp "target/${{ matrix.target }}/release/real.exe" "./"
+      run: cp "target/${{ matrix.target }}/release/Real.exe" "./"
 
     - name: Upload archive (linux and macos)
       if: matrix.build == 'linux' || matrix.build == 'macos'

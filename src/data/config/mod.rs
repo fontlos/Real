@@ -1,2 +1,2 @@
-pub mod config_db;
+pub mod setting;
 mod config_reader;

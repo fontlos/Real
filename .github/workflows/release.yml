@@ -57,23 +57,23 @@ jobs:
 
     - name: Install Lib
       if: matrix.build == 'linux'
-      run: sudo apt-get install libgtk-3-dev alsa-base alsa-utils alsa-source libasound2-dev webkit2gtk-4.0 javascriptcoregtk-4.0 libsoup2.4
+      run: sudo apt-get install libgtk-3-dev alsa-base alsa-utils alsa-source libasound2-dev webkit2gtk-4.0 javascriptcoregtk-4.0
 
     - name: Build binary
       run: cargo build --verbose --release --target ${{ matrix.target }}
 
     - name: Strip binary (linux and macos)
       if: matrix.build == 'linux' || matrix.build == 'macos'
-      run: strip "target/${{ matrix.target }}/release/real"
+      run: strip "target/${{ matrix.target }}/release/Real"
 
     - name: Cope binary (linux and macos)
       if: matrix.build == 'linux' || matrix.build == 'macos'
-      run: cp "target/${{ matrix.target }}/release/real" "./"
+      run: cp "target/${{ matrix.target }}/release/Real" "./"
 
     - name: Cope binary (windows)
       if: matrix.build == 'windows'
       shell: powershell
-      run: cp "target/${{ matrix.target }}/release/real.exe" "./"
+      run: cp "target/${{ matrix.target }}/release/Real.exe" "./"
 
     - name: Upload archive (linux and macos)
       if: matrix.build == 'linux' || matrix.build == 'macos'
@@ -82,7 +82,7 @@ jobs:
         name: ${{ matrix.archive-name }}
         path: |
           assets
-          real
+          Real
           LICENSE
           Readme.md
           ReadmeEN.md
@@ -95,7 +95,7 @@ jobs:
         name: ${{ matrix.archive-name }}
         path: |
           assets
-          real.exe
+          Real.exe
           LICENSE
           Readme.md
           ReadmeEN.md

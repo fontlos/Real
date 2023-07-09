@@ -1,7 +1,6 @@
 #![allow(non_snake_case)]
 #![allow(dead_code)]
 
-mod interface;
 mod components;
 mod page;
 mod data;
